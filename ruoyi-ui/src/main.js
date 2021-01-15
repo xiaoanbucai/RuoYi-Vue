@@ -2,8 +2,6 @@ import Vue from 'vue'
 
 import Cookies from 'js-cookie'
 
-import 'normalize.css/normalize.css' // a modern alternative to CSS resets
-
 import Element from 'element-ui'
 import './assets/styles/element-variables.scss'
 
@@ -20,7 +18,7 @@ import { getDicts } from "@/api/system/dict/data";
 import { getConfigKey } from "@/api/system/config";
 import { parseTime, resetForm, addDateRange, selectDictLabel, selectDictLabels, download, handleTree } from "@/utils/ruoyi";
 import Pagination from "@/components/Pagination";
-//自定义表格工具扩展
+// 自定义表格工具扩展
 import RightToolbar from "@/components/RightToolbar"
 
 // 全局方法挂载
