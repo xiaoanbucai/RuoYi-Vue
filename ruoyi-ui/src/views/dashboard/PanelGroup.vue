@@ -1,93 +1,88 @@
 <template>
   <el-row :gutter="40" class="panel-group">
-    <el-col :xs="12" :sm="12" :lg="6" class="card-panel-col">
-      <div class="card-panel" @click="handleSetLineChartData('newVisitis')">
+    <el-col :xs="8" :sm="8" :lg="8" class="card-panel-col">
+      <div class="card-panel">
         <div class="card-panel-icon-wrapper icon-people">
           <svg-icon icon-class="peoples" class-name="card-panel-icon" />
         </div>
         <div class="card-panel-description">
-          <div class="card-panel-text">
-            访客
-          </div>
-          <count-to :start-val="0" :end-val="102400" :duration="2600" class="card-panel-num" />
+          <div class="card-panel-text">代办业务</div>
         </div>
       </div>
     </el-col>
-    <el-col :xs="12" :sm="12" :lg="6" class="card-panel-col">
-      <div class="card-panel" @click="handleSetLineChartData('messages')">
+    <el-col :xs="8" :sm="8" :lg="8" class="card-panel-col">
+      <div class="card-panel">
         <div class="card-panel-icon-wrapper icon-message">
           <svg-icon icon-class="message" class-name="card-panel-icon" />
         </div>
         <div class="card-panel-description">
-          <div class="card-panel-text">
-            消息
-          </div>
-          <count-to :start-val="0" :end-val="81212" :duration="3000" class="card-panel-num" />
+          <div class="card-panel-text">帮扶业务</div>
         </div>
       </div>
     </el-col>
-    <el-col :xs="12" :sm="12" :lg="6" class="card-panel-col">
-      <div class="card-panel" @click="handleSetLineChartData('purchases')">
+    <el-col :xs="8" :sm="8" :lg="8" class="card-panel-col">
+      <div class="card-panel">
         <div class="card-panel-icon-wrapper icon-money">
           <svg-icon icon-class="money" class-name="card-panel-icon" />
         </div>
         <div class="card-panel-description">
-          <div class="card-panel-text">
-            金额
-          </div>
-          <count-to :start-val="0" :end-val="9280" :duration="3200" class="card-panel-num" />
+          <div class="card-panel-text">社区业务</div>
         </div>
       </div>
     </el-col>
-    <el-col :xs="12" :sm="12" :lg="6" class="card-panel-col">
-      <div class="card-panel" @click="handleSetLineChartData('shoppings')">
+    <el-col :xs="8" :sm="8" :lg="8" class="card-panel-col">
+      <div class="card-panel">
         <div class="card-panel-icon-wrapper icon-shopping">
           <svg-icon icon-class="shopping" class-name="card-panel-icon" />
         </div>
         <div class="card-panel-description">
-          <div class="card-panel-text">
-            订单
-          </div>
-          <count-to :start-val="0" :end-val="13600" :duration="3600" class="card-panel-num" />
+          <div class="card-panel-text">党团志愿</div>
+        </div>
+      </div>
+    </el-col>
+
+    <el-col :xs="8" :sm="8" :lg="8" class="card-panel-col">
+      <div class="card-panel">
+        <div class="card-panel-icon-wrapper icon-education">
+          <svg-icon icon-class="education" class-name="card-panel-icon" />
+        </div>
+        <div class="card-panel-description">
+          <div class="card-panel-text">宣传服务</div>
+        </div>
+      </div>
+    </el-col>
+        <el-col :xs="8" :sm="8" :lg="8" class="card-panel-col">
+      <div class="card-panel">
+        <div class="card-panel-icon-wrapper icon-education">
+          <svg-icon icon-class="education" class-name="card-panel-icon" />
+        </div>
+        <div class="card-panel-description">
+          <div class="card-panel-text">问题咨询</div>
         </div>
       </div>
     </el-col>
   </el-row>
 </template>
 
-<script>
-import CountTo from 'vue-count-to'
-
-export default {
-  components: {
-    CountTo
-  },
-  methods: {
-    handleSetLineChartData(type) {
-      this.$emit('handleSetLineChartData', type)
-    }
-  }
-}
-</script>
-
 <style lang="scss" scoped>
 .panel-group {
-  margin-top: 18px;
+  margin-top: 36px;
 
   .card-panel-col {
     margin-bottom: 32px;
   }
 
   .card-panel {
-    height: 108px;
+    height: 128px;
     cursor: pointer;
-    font-size: 12px;
+    font-size: 22px;
     position: relative;
     overflow: hidden;
     color: #666;
     background: #fff;
-    box-shadow: 4px 4px 40px rgba(0, 0, 0, .05);
-    border-color: rgba(0, 0, 0, .05);
+    box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.05);
+    margin:10% 5% 5% 10%;
 
     &:hover {
       .card-panel-icon-wrapper {
@@ -107,7 +102,11 @@ export default {
       }
 
       .icon-shopping {
-        background: #34bfa3
+        background: #34bfa3;
+      }
+
+      .icon-education {
+        background: #34bfa3;
       }
     }
 
@@ -124,7 +123,11 @@ export default {
     }
 
     .icon-shopping {
-      color: #34bfa3
+      color: #34bfa3;
+    }
+
+    .icon-education {
+      color: #34bfa3;
     }
 
     .card-panel-icon-wrapper {
@@ -143,14 +146,16 @@ export default {
     .card-panel-description {
       float: right;
       font-weight: bold;
-      margin: 26px;
+      margin: 30px;
       margin-left: 0px;
+      position: center;
 
       .card-panel-text {
-        line-height: 18px;
+        line-height: 22px;
         color: rgba(0, 0, 0, 0.45);
-        font-size: 16px;
-        margin-bottom: 12px;
+        font-size: 20px;
+
+        margin-bottom: 14px;
       }
 
       .card-panel-num {
@@ -160,7 +165,7 @@ export default {
   }
 }
 
-@media (max-width:550px) {
+@media (max-width: 550px) {
   .card-panel-description {
     display: none;
   }
