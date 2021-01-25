@@ -1,123 +1,29 @@
-//家庭慈善救助页面
+//家庭慈善救助页面 <
 <template>
   <div class="app-container">
     <el-card class="box-card">
       <div slot="header" class="clearfix">
-        <span>低保手续办理常见问题以及办理指导</span>
-        <!-- <el-button style="float: right; padding: 3px 0" type="text">上传文件</el-button> -->
+        <span style="text-align: center">家庭慈善救助办理常见问题以及办理指导</span>
       </div>
-      <el-collapse v-model="activeNames" @change="handleChange">
-        <el-collapse-item title="郑州低保标准" name="1">
-          <div>城镇低保标准</div>
-          <div>
-            从2015年7月1日起，郑州市城市低保标准将由现在每人每月470元提高至520元。
-          </div>
-          <div>农村低保标准</div>
-          <div>从2015年7月1日起，郑州市农村低保标准由每人每月260元提高至290元。</div>
-        </el-collapse-item>
-        <el-collapse-item title="申请低保需要什么条件？" name="2">
-          <div>
-            1、凡是本市城市居民，其共同生活的家庭成员人均收入低于户籍所在地城市低保标准的，且家庭财产状况符合当地人民政府规定条件的，均可申请城市低保待遇。
-          </div>
-          <div>2、三无人员。</div>
-        </el-collapse-item>
-        <el-collapse-item title="三无人员是指哪些人？" name="3">
-          <div>
-            三无人员是指：无生活来源、无劳动能力又无法定赡养人、抚(扶)养人或者法定赡养人、抚(扶)养人无赡养、抚(扶)养能力的城市居民。
-          </div>
-          <div>法定赡养人、抚(扶)养人无赡养、抚(扶)养能力是指以下两类贫困家庭：</div>
-          <div>
-            一是家庭中赡养、抚(扶)养义务人因患重病、因重度残疾、因未成年或年老体弱，没有能力对被赡养、抚(扶)养人提供物质上、生活上和精神上的照料;
-          </div>
-          <div>
-            二是家庭中赡养、抚(扶)养义务人因下落不明、失踪、被判处有期徒刑以上刑罚等原因无法与被赡养、抚(扶)养人保持联系。
-          </div>
-        </el-collapse-item>
-        <el-collapse-item title="办理城镇低保都需要什么申请材料？" name="4">
-          <div>
-            城市低保待遇的申请应以家庭为单位，由户主通过户籍所在地社区居委会向街道办事处(乡、镇人民政府)提出书面申请。
-          </div>
-          <div>
-            填写《河南省城市居民最低生活保障申请表》，并根据家庭成员实际情况，提供以下材料或复印件：
-          </div>
-          <div>
-            1、居民户口簿、居民身份证、结婚证、离婚证(或法院判决书)、收养证或其他证明其家庭成员身份关系的证明;
-          </div>
-          <div>
-            2、残疾证、劳动能力状况证明、学生证(或入学通知书)、优抚对象证明、下岗证、离(退)休证、就业登记证明、养老保险证明、失业保险证明;
-          </div>
-          <div>
-            3、法定赡养(扶养、抚养)人家庭成员收入证明、有劳动能力家庭成员的收入状况证明、下岗职工基本生活费证明、企业职工遗属生活补助费证明;
-          </div>
-          <div>4、拆迁协议、归侨生活补助费证明、领取一次性补偿金的数额及用途证明;</div>
-          <div>5、有关裁决、判决、协议及其他相关材料等。</div>
-          <div>
-            注：特殊情况下，也可由非户主家庭成员或者法定监护人、社会组织等提出申请。
-          </div>
-        </el-collapse-item>
-        <el-collapse-item title="办理农村低保都需要什么申请材料？" name="5">
-          <div>
-            申请农村低保待遇，按照属地管理的原则，以家庭为单位，以户主为申请人，向户籍所在地村民委员会提交书面申请。
-          </div>
-          <div>同时提供下列相关的证件和证明材料：</div>
-          <div>
-            1、居民户口簿及家庭成员身份证的原件和复印件，收养证或其他证明其家庭成员身份关系的证明;
-          </div>
-          <div>2、家庭收入证明;</div>
-          <div>3、夫妻离婚的需提供离婚证和离婚判决(调解)书;</div>
-          <div>
-            4、残疾人需提供残疾证、丧失或基本丧失劳动能力的人员需出具医院的诊断证明;学生证(或入学通知书)、优抚对象证明;
-          </div>
-          <div>5、土地(山林、水塘)承包或者租赁合同;</div>
-          <div>6、法定赡养(扶养、抚养)人家庭成员收入证明;</div>
-          <div>7、领取一次性补偿金的数额及用途证明;</div>
-          <div>8、有关裁决、判决、协议书及其他相关材料等;</div>
-          <div>
-            9、申请人要求有关部门、单位或组织出据收入等情况证明的，有关部门、单位或组织应在5日内如实提供;
-          </div>
-          <div>
-            注：特殊情况下，也可由非户主家庭成员或者法定监护人、社会组织等提出申请。
-          </div>
-        </el-collapse-item>
-        <el-collapse-item title="申请低保都需要经过哪些程序？" name="6">
-          <div>1、户主向户口所在地社区居委会(村民委员会)提出申请;</div>
-          <div>2、社区居委会(村民委员会)入户调查;</div>
-          <div>3、乡(镇)人民政府、街道办事处进行审核;</div>
-          <div>4、县(市)区民政局进行审批。</div>
-          <div>申请之日起的30日内办结审批手续，不收费。</div>
-        </el-collapse-item>
-        <el-collapse-item title="郑州不予享受城市低保待遇的情况" name="7">
-          <div>
-            有下列情形之一的，不予享受城市低保待遇;已经享受城市低保待遇的，应予取消：
-          </div>
-          <div>
-            1、不按规定程序申请审批、相关证明材料提供不全、不如实申报家庭收入或弄虚作假的。
-          </div>
-          <div>2、拒绝接受低保工作人员入户核实家庭财产和家庭收入的。</div>
-          <div>
-            3、家庭成员自费(不含社会各界或亲戚朋友资助)安排子女借读、择校就读、进入私立学校就读的。
-          </div>
-          <div>4、家庭成员中有出国工作(包括劳务输出)、学习、经商的。</div>
-          <div>5、从郑州市以外地区农村迁入郑州市，未满3年的。</div>
-          <div>
-            6、有高额价值收藏、买卖股票或其他投资行为的;有高于城市低保标准馈赠、礼金支出的;平时穿戴具有较高经济价值首饰的;经常出入餐饮、娱乐场所消费的。
-          </div>
-          <div>7、拥有机动车辆(不含残疾人代步车)的。</div>
-          <div>
-            8、近半年内购买高档(单件价值在1000元以上)家用电器等非生活必需品、近两年内非拆迁原因购买商品房、近一年内装修现有住宅的;拥有一定经济价值、可租赁的闲置住房的。
-          </div>
-          <div>
-            9、因赌博、吸毒、嫖娼等违法行为造成生活困难尚未改正的，或因其他违法行为正处于被司法机关处罚期间的，违法人员本人不能享受城市低保待遇。
-          </div>
-          <div>
-            10、申请人的法定赡养人、抚(扶)养人有赡养、抚(扶)养能力，但未依法履行赡养、抚(扶)养义务的。
-          </div>
-          <div>
-            11、符合就业条件无正当理由半年内连续两次拒绝有关部门介绍就业或技能培训的;无正当理由拒不参加公益性劳动的。
-          </div>
-          <div>12、按规定不能享受城市低保待遇的其他情形。</div>
-        </el-collapse-item>
-      </el-collapse>
+      <el-upload
+        style="text-align: center"
+        class="upload-demo"
+        accept=".doc, .docx"
+        drag
+        multiple
+        :file-list="fileList"
+        :auto-upload="false"
+      >
+        <i class="el-icon-upload"></i>
+        <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
+      </el-upload>
+      <el-button
+        style="margin: 15px 0px 0px 35%"
+        size="small"
+        type="success"
+        @click="submitUpload"
+        >上传到服务器</el-button
+      >
     </el-card>
   </div>
 </template>
@@ -125,18 +31,21 @@
 <script>
 export default {
   data() {
-    return {
-      activeNames: ["1"],
-    };
+    return {};
   },
   methods: {
-    handleChange(val) {
-      console.log(val);
+    submitUpload() {
+      this.$refs.upload.submit();
+    },
+    handleRemove(file, fileList) {
+      console.log(file, fileList);
+    },
+    handlePreview(file) {
+      console.log(file);
     },
   },
 };
 </script>
-
 <style>
 .text {
   font-size: 14px;

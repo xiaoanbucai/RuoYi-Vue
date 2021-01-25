@@ -5,10 +5,9 @@
       <el-card class="box-card1">
         <div slot="header" class="clearfix">
           <span>低保手续办理常见问题以及办理指导</span>
-          <!-- <el-button style="float: right; padding: 3px 0" type="text">上传文件</el-button> -->
         </div>
         <el-collapse v-model="activeNames" @change="handleChange">
-          <el-collapse-item title="郑州低保标准" name="1">
+          <el-collapse-item title="郑州低保标准" name="1" style="font-size: 24px">
             <div>城镇低保标准</div>
             <div>
               从2015年7月1日起，郑州市城市低保标准将由现在每人每月470元提高至520元。
@@ -126,7 +125,6 @@
         <div slot="header" class="clearfix">
           <span>业务办理相关材料提交</span>
         </div>
-
       </el-card>
     </el-col>
   </div>
@@ -148,10 +146,6 @@ export default {
 </script>
 
 <style>
-.text {
-  font-size: 14px;
-}
-
 .item {
   margin-bottom: 18px;
 }
@@ -167,11 +161,11 @@ export default {
 
 .box-card1 {
   width: 480px;
-  margin-left:48px;
+  margin-left: 48px;
 }
 
 .box-card2 {
   width: 480px;
-  margin-left:240px;
+  margin-left: 240px;
 }
 </style>

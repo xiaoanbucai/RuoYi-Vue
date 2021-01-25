@@ -1,7 +1,7 @@
 <template>
   <div class="dashboard-editor-container">
     <div class="block">
-      <el-carousel height="550px" interval="5000">
+      <el-carousel height="550px" :interval="3000">
         <el-carousel-item>
           <div>
             <el-row style="background: #fff; padding: 5% 64px 5% 64px">
@@ -18,16 +18,11 @@
         </el-carousel-item>
 
         <el-carousel-item>
-          <div>
-          
-          </div>
+          <div></div>
         </el-carousel-item>
 
         <el-carousel-item>
-          <div>
-
-          
-          </div>
+          <div></div>
         </el-carousel-item>
       </el-carousel>
     </div>
