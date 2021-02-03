@@ -2,7 +2,7 @@
 <template>
   <div class="app-container">
     <el-col :span="8">
-      <el-card class="box-card">
+      <el-card class="box-card1">
         <div slot="header" class="clearfix">
           <span>孤儿救助金办理常见问题以及办理指导</span>
           <!-- <el-button style="float: right; padding: 3px 0" type="text">上传文件</el-button> -->
@@ -111,8 +111,9 @@ export default {
   clear: both;
 }
 
-.box-card {
+.box-card1 {
   width: 480px;
+  margin-left: 48px;
 }
 
 .box-card2 {

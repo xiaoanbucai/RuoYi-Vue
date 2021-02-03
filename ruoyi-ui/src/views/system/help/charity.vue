@@ -2,7 +2,7 @@
 <template>
   <div class="app-container">
     <el-col :span="8">
-      <el-card class="box-card">
+      <el-card class="box-card1">
         <div slot="header" class="clearfix">
           <span style="text-align: center">家庭慈善救助办理常见问题以及办理指导</span>
         </div>
@@ -96,26 +96,20 @@
           <i class="el-icon-upload"></i>
           <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
           <div class="el-upload__tip" slot="tip">
-            <el-checkbox/>是否更新已经存在的用户数据
-            <el-link type="info" style="font-size: 12px" @click=""
+            <el-checkbox />是否更新已经存在的用户数据
+            <el-link type="info" style="font-size: 12px" @click="importTemplate"
               >下载模板</el-link
             >
           </div>
         </el-upload>
-
-        <!-- <el-button
-        style="margin: 15px 0px 0px 35%"
-        size="small"
-        type="success"
-        @click="submitUpload"
-        >上传到服务器</el-button
-      > -->
       </el-card>
     </el-col>
   </div>
 </template>
 
 <script>
+import { importTemplate } from "@/api/system/user";
+
 export default {
   data() {
     return {
@@ -142,6 +136,29 @@ export default {
         } 个文件`
       );
     },
+
+    /** 下载模板操作 */
+    importTemplate() {
+      importTemplate().then((response) => {
+        this.download(response.msg);
+      });
+    },
+    // 文件上传中处理
+    handleFileUploadProgress(event, file, fileList) {
+      this.upload.isUploading = true;
+    },
+    // 文件上传成功处理
+    handleFileSuccess(response, file, fileList) {
+      this.upload.open = false;
+      this.upload.isUploading = false;
+      this.$refs.upload.clearFiles();
+      this.$alert(response.msg, "导入结果", { dangerouslyUseHTMLString: true });
+      this.getList();
+    },
+    // 提交上传文件
+    submitFileForm() {
+      this.$refs.upload.submit();
+    },
   },
 };
 </script>
@@ -163,8 +180,9 @@ export default {
   clear: both;
 }
 
-.box-card {
+.box-card1 {
   width: 480px;
+  margin-left: 48px;
 }
 
 .box-card2 {
